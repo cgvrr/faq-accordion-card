@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px red solid;
+}
+
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+html {
+  font-size: 12px;
+  min-width: 320px;
+}
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+/*MOBILE MODE*/
+.coverPhoto {
+  background: url('./images/illustration-woman-online-mobile.svg'),
+    url('./images/bg-pattern-mobile.svg');
+  width: 256px;
+  height: 196px;
+  background-repeat: no-repeat;
+  background-position: center, bottom center;
+  position: absolute;
+}
+
+/*MAIN CONTAINER*/
+.container {
+  margin: calc(50px + (150px / 2));
+  width: 95%;
+  background-color: white;
+  border-radius: 2rem;
+  padding-top: 8rem;
+  box-shadow: 0 10px 15px -5px hsl(237, 12%, 33%);
+}
+
+/*MAIN CONTENT*/
+.content {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/*TEXT CONTENT*/
+.header_title {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700px;
+  text-align: center;
+}
+
+/*QUESTIONS SECTION*/
+.faq_question {
+  font-weight: 400px;
+}
+.question {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  font-size: 1.2rem;
+  color: var(--very-dark-grayish-blue);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.question:hover {
+  color: var(--soft-red);
+}
+
+.question--selected {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700;
+  border: none;
+}
+/*arrow function*/
+.icon-down {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+  background: url('./images/icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-up {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+  background: url('./images/icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flip-vertically {
+  transform: scaleY(-1);
+}
+/*ANSWERS*/
+.answer {
+  border-bottom: var(--light-grayish-blue);
+  color: var(--very-dark-grayish-blue);
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.answer {
+  display: none;
+}
+.show-text .answer {
+  display: block;
+}
+
+/*when question is clicked, the answer is shown and the arrow also transforms*/
+
+.icon-up {
+  display: none;
+  transform: scaleY(-1);
+}
+.show-text .icon-up {
+  display: inline;
+}
+
+.show-text .icon-down {
+  display: none;
+}
+
+/*FOOTER SECTION*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*DESKTOP VERSION*/
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    display: block;
+    width: 65%;
+    margin: auto;
+    padding: 0;
+    background: url('./images/illustration-woman-online-desktop.svg'),
+      url('./images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: calc(-472px / 7) center,
+      calc(-996px / 1.735) calc(-945px / 3);
+    max-width: 900px;
+    min-height: 500px;
+    overflow: hidden;
+  }
+  .coverPhoto {
+    display: block;
+    width: 180px;
+    height: 120px;
+    background: url('./images/illustration-box-desktop.svg');
+    background-repeat: no-repeat;
+    left: 12%;
+    top: 42.5%;
+  }
+  .header_title {
+    text-align: left;
+  }
+  /*CONTENT*/
+  .content {
+    max-width: 400px;
+    min-width: 400px;
+    padding-top: 100px;
+    margin: 0 0 0 auto;
+    height: 100%;
+    background-color: white;
+  }
+}
